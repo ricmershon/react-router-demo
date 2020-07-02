@@ -14,6 +14,7 @@ const HomePage = props => {
 };
 
 const TopicsList = props => {
+  console.log(props)
   return (
     <div>
       <h1>TOPIC LIST PAGE</h1>
@@ -25,6 +26,7 @@ const TopicsList = props => {
 };
 
 const TopicDetail = props => {
+  console.log(props);
   return (
     <div>
       <h1>TOPIC DETAIL PAGE: {props.match.params.topicId}</h1>
@@ -36,10 +38,8 @@ function App() {
   return (
     <div>
       <Route exact path='/' component={HomePage} />
-      <Route exact path='/blog/asdqw/topics' component={TopicsList} />
-      <Route path='/blog/asdqw/topics/:topicId' component={TopicDetail} />
-      <Route exact path='/blog/topics' component={TopicsList} />
-      <Route path='/blog/topics/:topicId' component={TopicDetail} />
+      <Route exact path='/topics' component={TopicsList} />
+      <Route path='/topics/:topicId' component={TopicDetail} />
     </div>
   );
 }
